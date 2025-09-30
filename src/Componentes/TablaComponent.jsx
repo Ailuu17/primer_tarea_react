@@ -1,28 +1,37 @@
 import React from "react";
 
-function TablaComponent({ datos }) {
+function TablaComponent(props) {
+
+    const [datos, setDatos] = React.useState([]); // Estado para almacenar los datos
+
   return (
-    <table border="1" cellPadding="8" style={{ margin: "auto", marginBottom: "2rem" }}>
-      <thead>
+    <table class="tabla">
+
+    <h2>Tabla de Datos:</h2>
+
+      <thead>   
         <tr>
           <th>Nombre</th>
           <th>Edad</th>
         </tr>
       </thead>
+
       <tbody>
         {datos.length === 0 ? (
           <tr>
-            <td colSpan="2" style={{ textAlign: "center" }}>Sin datos</td>
+            <td>Sin datos</td>
           </tr>
         ) : (
-          datos.map((item, idx) => (
-            <tr key={idx}>
+            
+          datos.map((item, index) => (
+            <tr key={index}>
               <td>{item.nombre}</td>
               <td>{item.edad}</td>
             </tr>
           ))
         )}
       </tbody>
+
     </table>
   );
 }
