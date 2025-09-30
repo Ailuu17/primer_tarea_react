@@ -13,7 +13,8 @@ function App() {
     <>
       <NavbarComponent />
       <FormComponent onAdd={handleAddDato} />
-      <TablaComponent datos={datos} />
+     
+
     </>
   )
 }

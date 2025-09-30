@@ -1,6 +1,6 @@
 import React from "react";
 
-function TablaComponent(props) {
+function TablaComponent({props}) {
 
     const [datos, setDatos] = React.useState([]); // Estado para almacenar los datos
 
@@ -23,7 +23,7 @@ function TablaComponent(props) {
           </tr>
         ) : (
             
-          datos.map((item, index) => (
+          props.map((item, index) => (
             <tr key={index}>
               <td>{item.nombre}</td>
               <td>{item.edad}</td>

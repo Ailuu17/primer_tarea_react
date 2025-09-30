@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TablaComponent from "./TablaComponent";
 
 function FormComponent({ onAdd }) {
   const [nombre, setNombre] = useState(' ');
@@ -23,6 +24,7 @@ function FormComponent({ onAdd }) {
 
 
   return (
+    <>
     <form class="form" onSubmit={handleSubmit}>
 
       <h2>Formulario:</h2>
@@ -45,8 +47,6 @@ function FormComponent({ onAdd }) {
         onChange={e => setEdad(e.target.value)}
       />
 
-      <button class="button" type="submit">Agregar</button>
-
       <button class="button" onClick={() => {
           agregarForm();
       }}>Agregar</button>
@@ -60,6 +60,8 @@ function FormComponent({ onAdd }) {
       </ul>
 
     </form>
+    <TablaComponent datos={Form} />
+    </>
   );
 }
 
