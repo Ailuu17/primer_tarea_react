@@ -13,6 +13,14 @@ function FormComponent({ onAdd }) {
     }
 
 
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    if (nombre.trim() === "" || edad === "") return;
+    onAdd({ nombre, edad });
+    setNombre("");
+    setEdad("");
+  };
+
 
   return (
     <form class="form" onSubmit={handleSubmit}>
